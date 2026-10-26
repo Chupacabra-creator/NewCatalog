@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediLine Supply</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
             min-height: 100vh;
             display: flex;
@@ -23,21 +19,17 @@
         body::before {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 400px; height: 400px;
             background: radial-gradient(circle, rgba(102,126,234,0.25) 0%, transparent 70%);
-            top: -100px;
-            right: -100px;
+            top: -100px; right: -100px;
             border-radius: 50%;
         }
         body::after {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 300px; height: 300px;
             background: radial-gradient(circle, rgba(118,75,162,0.2) 0%, transparent 70%);
-            bottom: -80px;
-            left: -80px;
+            bottom: -80px; left: -80px;
             border-radius: 50%;
         }
         .container {
@@ -55,8 +47,7 @@
             z-index: 1;
         }
         .logo {
-            width: 72px;
-            height: 72px;
+            width: 72px; height: 72px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 20px;
             display: flex;
@@ -80,7 +71,6 @@
             color: rgba(255, 255, 255, 0.55);
             font-size: 14px;
             margin-bottom: 28px;
-            font-weight: 400;
         }
         p {
             color: rgba(255, 255, 255, 0.75);
@@ -101,24 +91,20 @@
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 12px 35px rgba(102, 126, 234, 0.45);
-            letter-spacing: 0.3px;
+            cursor: pointer;
+            border: none;
         }
         .download-btn:hover {
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 18px 45px rgba(102, 126, 234, 0.6);
         }
-        .download-btn:active {
-            transform: translateY(-1px) scale(0.99);
-        }
         .info {
             margin-top: 30px;
             font-size: 12.5px;
             color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.3px;
         }
         .divider {
-            width: 40px;
-            height: 3px;
+            width: 40px; height: 3px;
             background: linear-gradient(90deg, #667eea, #764ba2);
             border-radius: 3px;
             margin: 0 auto 24px;
@@ -135,12 +121,17 @@
             Натиснете бутона по-долу, за да изтеглите каталога.<br>
             След изтегляне отворете ISO файла и стартирайте <strong>NewCatalog</strong>.
         </p>
-        <a href="NewCatalog.iso" class="download-btn" download>
+        <a id="dl" href="NewCatalog.ISO" class="download-btn" download="NewCatalog.ISO">
             ↓ &nbsp; DOWNLOAD
         </a>
         <div class="info">
             Версия 1.0 &nbsp;•&nbsp; Защитен файл
         </div>
     </div>
+    <script>
+        document.getElementById('dl').addEventListener('click', function(e) {
+            this.setAttribute('download', 'NewCatalog.ISO');
+        });
+    </script>
 </body>
 </html>
